@@ -738,6 +738,7 @@ public abstract class AbstractSharedSessionContract implements SharedSessionCont
 
 	@Override
 	public QueryImpl createQuery(String queryString) {
+		System.out.println( "ROBERT createQuery: " + queryString);
 		checkOpen();
 		pulseTransactionCoordinator();
 		delayedAfterCompletion();

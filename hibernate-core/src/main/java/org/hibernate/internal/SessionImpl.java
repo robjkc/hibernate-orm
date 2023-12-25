@@ -228,6 +228,8 @@ public class SessionImpl
 	public SessionImpl(SessionFactoryImpl factory, SessionCreationOptions options) {
 		super( factory, options );
 
+		System.out.println( "ROBERT sessionImpl!!!");
+
 		this.persistenceContext = createPersistenceContext();
 		this.actionQueue = createActionQueue();
 

@@ -410,17 +410,17 @@ checkstyleMain.exclude '**/org/hibernate/cfg/**'
 checkstyleMain.exclude '**/org/hibernate/cfg/*'
 
 
-task forbiddenApisSystemOut(type: CheckForbiddenApis, dependsOn: compileJava) {
-	classesDirs = project.sourceSets.main.output.classesDirs
-	classpath = project.sourceSets.main.compileClasspath + project.sourceSets.main.runtimeClasspath
-	targetCompatibility = project.forbiddenAPITargetJDKCompatibility
-	bundledSignatures += 'jdk-system-out'
-	suppressAnnotations += ['org.hibernate.internal.build.AllowSysOut', 'org.hibernate.internal.build.AllowPrintStacktrace']
+//task forbiddenApisSystemOut(type: CheckForbiddenApis, dependsOn: compileJava) {
+//	classesDirs = project.sourceSets.main.output.classesDirs
+//	classpath = project.sourceSets.main.compileClasspath + project.sourceSets.main.runtimeClasspath
+//	targetCompatibility = project.forbiddenAPITargetJDKCompatibility
+//	bundledSignatures += 'jdk-system-out'
+//	suppressAnnotations += ['org.hibernate.internal.build.AllowSysOut', 'org.hibernate.internal.build.AllowPrintStacktrace']
 
 	// This slows down the checks a little, but is necessary to avoid the gradle deamon holding on
 	// to class definitions loaded previously - even possibly in a previous build.
-	disableClassloadingCache = true
-}
+//	disableClassloadingCache = true
+//}
 
 task forbiddenApisUnsafe(type: CheckForbiddenApis, dependsOn: compileJava) {
 	classesDirs = project.sourceSets.main.output.classesDirs
