@@ -1,0 +1,2 @@
+Building without running tests
+./gradlew build -x test
