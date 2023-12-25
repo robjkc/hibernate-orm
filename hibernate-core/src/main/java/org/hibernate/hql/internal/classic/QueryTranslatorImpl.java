@@ -738,6 +738,8 @@ public class QueryTranslatorImpl extends BasicLoader implements FilterTranslator
 
 		sqlString = sql.toQueryString();
 
+		System.out.println("ROBERT converted=" + sql + " to query=" + sqlString);
+
 		if ( holderClass != null ) {
 			holderConstructor = ReflectHelper.getConstructor( holderClass, returnTypes );
 		}

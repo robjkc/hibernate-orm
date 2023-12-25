@@ -1,2 +1,8 @@
 Building without running tests
 ./gradlew build -x test
+
+- Build on linux P73 - 4m 35s
+
+Binaries located in:
+hibernate-core/target/libs
+hibernate-core-5.6.3.Final.jar

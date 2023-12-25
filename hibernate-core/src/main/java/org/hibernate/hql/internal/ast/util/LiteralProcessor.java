@@ -183,6 +183,9 @@ public class LiteralProcessor implements HqlSqlTokenTypes {
 
 	public void processBoolean(AST constant) {
 		String replacement = (String) walker.getTokenReplacements().get( constant.getText() );
+
+		System.out.println("ROBERT processBoolean, constant=" + constant.getText() + " replacement=" + replacement);
+
 		if ( replacement != null ) {
 			constant.setText( replacement );
 		}
@@ -194,6 +197,9 @@ public class LiteralProcessor implements HqlSqlTokenTypes {
 
 	private void processLiteral(AST constant) {
 		String replacement = (String) walker.getTokenReplacements().get( constant.getText() );
+
+		System.out.println("ROBERT processLiteral, constant=" + constant.getText() + " replacement=" + replacement);
+
 		if ( replacement != null ) {
 			if ( LOG.isDebugEnabled() ) {
 				LOG.debugf( "processConstant() : Replacing '%s' with '%s'", constant.getText(), replacement );

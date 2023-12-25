@@ -663,6 +663,8 @@ public abstract class AbstractSharedSessionContract implements SharedSessionCont
 
 	protected QueryImpl createQuery(NamedQueryDefinition queryDefinition) {
 		String queryString = queryDefinition.getQueryString();
+		System.out.println("ROBERT createQuery from definition: " + queryString);
+
 		final QueryImpl query = new QueryImpl(
 				this,
 				getQueryPlan( queryString, false ),
@@ -738,7 +740,7 @@ public abstract class AbstractSharedSessionContract implements SharedSessionCont
 
 	@Override
 	public QueryImpl createQuery(String queryString) {
-		System.out.println( "ROBERT createQuery: " + queryString);
+		System.out.println("ROBERT createQuery: " + queryString);
 		checkOpen();
 		pulseTransactionCoordinator();
 		delayedAfterCompletion();
