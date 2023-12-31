@@ -171,8 +171,12 @@ public class QueryTranslatorImpl implements FilterTranslator {
 	 *                       is not a filter.
 	 */
 	private synchronized void doCompile(Map replacements, boolean shallow, String collectionRole) {
+		System.out.println("ROBERT doCompile sql=" + this.sql);
+
 		// If the query is already compiled, skip the compilation.
 		if ( compiled ) {
+			System.out.println("ROBERT doCompile already compiled sql=" + this.sql);
+
 			LOG.debug( "compile() : The query is already compiled, skipping..." );
 			return;
 		}

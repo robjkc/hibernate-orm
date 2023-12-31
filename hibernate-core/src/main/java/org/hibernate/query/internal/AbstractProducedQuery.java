@@ -1646,6 +1646,7 @@ public abstract class AbstractProducedQuery<R> implements QueryImplementor<R> {
 		}
 
 		final String expandedQuery = getQueryParameterBindings().expandListValuedParameters( getQueryString(), getProducer() );
+		System.out.println("ROBERT expandedQuery=" + expandedQuery);
 		return getProducer().list(
 				expandedQuery,
 				makeQueryParametersForExecution( expandedQuery )
